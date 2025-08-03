@@ -312,6 +312,15 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Automatic alternating background colors for sections */
+main .section:nth-of-type(even) {
+    background: var(--foreground);
+}
+
+main .section:nth-of-type(odd) {
+    background: var(--background);
+}
+
 /* Business Facts Section */
 .facts-grid {
     display: grid;
@@ -350,10 +359,6 @@ nav {
     color: var(--primary-text);
 }
 
-/* Awards Section */
-.awards-section {
-    background: var(--foreground);
-}
 
 .awards-content {
     display: grid;
@@ -433,7 +438,7 @@ nav {
 /* Property Section */
 .property-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -442,13 +447,17 @@ nav {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .facility-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
 }
 
 .facility-card:nth-child(3) .facility-images,
@@ -463,10 +472,6 @@ nav {
     border-radius: 8px;
 }
 
-/* Opportunity Section */
-.opportunity-section {
-    background: var(--foreground);
-}
 
 .opportunity-content {
     display: grid;
@@ -559,10 +564,6 @@ nav {
     border-radius: 10px;
 }
 
-/* Contact Section */
-.contact-section {
-    background: var(--foreground);
-}
 
 .contact-content {
     display: grid;
@@ -739,6 +740,10 @@ footer a:hover {
     }
     
     .facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .property-grid {
         grid-template-columns: 1fr;
     }
     
