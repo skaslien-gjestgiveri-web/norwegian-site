@@ -410,9 +410,10 @@ main .section:nth-of-type(odd) {
 }
 
 .awards-list {
-    list-style: none;
+    list-style: disc;
     background: var(--white);
     padding: 2rem;
+    padding-left: 3rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -420,19 +421,10 @@ main .section:nth-of-type(odd) {
 .awards-list li {
     padding: 0.75rem 0;
     border-bottom: 1px solid var(--light-gray);
-    position: relative;
-    padding-left: 1.5rem;
 }
 
 .awards-list li:last-child {
     border-bottom: none;
-}
-
-.awards-list li:before {
-    content: "🏆";
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
 }
 
 /* Property Section */
@@ -481,22 +473,13 @@ main .section:nth-of-type(odd) {
 }
 
 .opportunity-text ul {
-    list-style: none;
+    list-style: disc;
+    padding-left: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .opportunity-text li {
     padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.opportunity-text li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
 }
 
 .opportunity-image {
@@ -529,26 +512,13 @@ main .section:nth-of-type(odd) {
 
 .location-info ul,
 .attractions ul {
-    list-style: none;
+    list-style: disc;
+    padding-left: 1.5rem;
 }
 
 .location-info li,
 .attractions li {
     padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.location-info li:before {
-    content: "📍";
-    position: absolute;
-    left: 0;
-}
-
-.attractions li:before {
-    content: "🎯";
-    position: absolute;
-    left: 0;
 }
 
 .location-images {
