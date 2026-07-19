@@ -672,6 +672,11 @@
       </div>
     </footer>
 
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Lukk">&times;</button>
+      <img alt="" src="" />
+    </div>
+
     <script>
       // Hamburger menu toggle
       const hamburger = document.getElementById("hamburger");
@@ -750,6 +755,37 @@
           }
         });
       }
+
+      // Image lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll("img").forEach((img) => {
+        if (img.classList.contains("logo") || img.closest("video")) return;
+        img.classList.add("zoomable");
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.currentSrc || img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add("active");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      lightbox.addEventListener("click", closeLightbox);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("active")) {
+          closeLightbox();
+        }
+      });
     </script>
   </body>
 </html>
